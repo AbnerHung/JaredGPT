@@ -11,6 +11,34 @@
 ## Download Links  
 Please check out the [release](https://github.com/ZekeSnider/Jared/releases/latest) page for an up to date pre-compiled download.
 
+## JaredGPT Plugin
+
+An openai api plugin for Jared(https://github.com/ZekeSnider/Jared)
+
+### Getting Started
+
+- Find the callOpenAIAPI Function
+
+- Fill in your openai apikey
+
+- Build
+
+- Move the .bundle file to Jared Plugin Folder
+
+- Edit Config.json:
+```
+"routes": [
+   {
+    "name": "/askopenai",
+    "comparisons": {
+      "startsWith": ["/ask"]
+    },
+    "parameterSyntax": "/ask [message to send]",
+    "description": "Send a message repeatedly"
+   }
+  ],
+```
+
 ## What is Jared?  
 A powerful and easily extensible iMessage bot. It makes it possible to add chat bot features to any iMessage conversation. It includes some basic commands built in. API integrations, games, custom emotes, and much more can be added by using webhooks, the REST API, or by installing plugins. 
 
@@ -74,7 +102,7 @@ Jared Provides a variety of APIs to allow you to easily add your own commands, a
 
 ### Plugins  
 Additional routes can be added via modularized plugins, written in native Swift code. Plugins are loaded dynamically from the `~/Library/Application Support/Jared/Plugins` folder. To install a module, drag it in there and then send `/reload` to Jared, or click `Reload Plugins` in the UI.
-  
+
 For more information on developing your own plugins, see the [plugin documentation](Documentation/plugins.md). If you developed any plugins, please contact me a link so I can add a link here! I will be working on a few extra modules of my own as well, and will add them here when they are complete.
 
 ### Webhooks
